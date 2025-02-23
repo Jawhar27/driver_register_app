@@ -4,8 +4,10 @@ import 'package:driver_register_app/register/common_widgets/common_button.dart';
 import 'package:driver_register_app/register/common_widgets/common_register_container.dart';
 import 'package:driver_register_app/register/common_widgets/custom_text_field.dart';
 import 'package:driver_register_app/register/common_widgets/main_container.dart';
+import 'package:driver_register_app/register/models/driver_register_request.dart';
 import 'package:driver_register_app/register/providers/data_provider.dart';
 import 'package:driver_register_app/utils/navigation_util.dart';
+import 'package:driver_register_app/utils/print_log.dart';
 import 'package:driver_register_app/utils/screen_util.dart';
 import 'package:driver_register_app/utils/validation_util.dart';
 import 'package:flutter/material.dart';
@@ -94,16 +96,18 @@ class _DriverProfileScreenState extends State<DriverProfileScreen> {
       _isFormValidated = true;
     });
     if (_formKey.currentState?.validate() ?? false) {
-      final provider = Provider.of<DataProvider>(context, listen: false);
-      provider.driverRegisterRequest?.personalInfo?.email = _emailController.text;
-      provider.driverRegisterRequest?.personalInfo?.name = _nameController.text;
-      provider.driverRegisterRequest?.personalInfo?.mobile = _mobileController.text;
-      provider.driverRegisterRequest?.personalInfo?.nic = _nicController.text;
+    final provider = Provider.of<DataProvider>(context, listen: false);
+    
+    provider.driverRegisterRequest?.personalInfo?.email = _emailController.text;
+    provider.driverRegisterRequest?.personalInfo?.name = _nameController.text;
+    provider.driverRegisterRequest?.personalInfo?.mobile =
+        _mobileController.text;
+    provider.driverRegisterRequest?.personalInfo?.nic = _nicController.text;
 
-      pushScreen(
-        context,
-        AppRoutes.toLisenceDriverVerificationScreen,
-      );
+    pushScreen(
+      context,
+      AppRoutes.toLisenceDriverVerificationScreen,
+    );
     }
   }
 }

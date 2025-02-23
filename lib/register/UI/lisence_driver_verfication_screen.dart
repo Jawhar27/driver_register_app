@@ -9,6 +9,7 @@ import 'package:driver_register_app/register/common_widgets/image_container.dart
 import 'package:driver_register_app/register/common_widgets/main_container.dart';
 import 'package:driver_register_app/register/providers/data_provider.dart';
 import 'package:driver_register_app/utils/navigation_util.dart';
+import 'package:driver_register_app/utils/print_log.dart';
 import 'package:driver_register_app/utils/screen_util.dart';
 import 'package:driver_register_app/utils/validation_util.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +68,7 @@ class _LisenceDriverVerficationScreenState
 
   @override
   Widget build(BuildContext context) {
+    printLogs(Provider.of<DataProvider>(context,listen: false).driverRegisterRequest?.personalInfo?.email);
     return CommonRegisterContainer(
       progessStep: 2,
       child: Form(

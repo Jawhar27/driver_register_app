@@ -44,7 +44,7 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
           vehicleFront = pickedFile;
         });
       }
-      if (type == "VB") {
+      if (type == "VBB") {
         setState(() {
           vehicleBack = pickedFile;
         });
@@ -140,7 +140,7 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
                 imageContainer(
                   title: "Vehicle Back Image",
                   onTap: () {
-                    _pickImage('VB');
+                    _pickImage('VBB');
                   },
                   image: vehicleBack,
                   errorMsg: errorMessage,

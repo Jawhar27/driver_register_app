@@ -68,7 +68,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
             ),
             CustomTextField(
               hintText: 'Account Number',
-              controller: _accountHolderNameController,
+              controller: _accountNumberController,
               validator: validateAccountNumber,
             ),
             const SizedBox(

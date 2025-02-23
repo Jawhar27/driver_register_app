@@ -5,6 +5,13 @@ class DriverRegisterRequest {
   DriverLisenceInfo? driverLisenceInfo;
   VehicleInfo? vehicleInfo;
   BankInfo? bankInfo;
+
+  DriverRegisterRequest({
+    this.personalInfo,
+    this.driverLisenceInfo,
+    this.vehicleInfo,
+    this.bankInfo,
+  });
 }
 
 class DriverLisenceInfo {
@@ -12,6 +19,13 @@ class DriverLisenceInfo {
   XFile? lisenceBack;
   XFile? driverImg;
   XFile? additonalImg;
+
+  DriverLisenceInfo({
+    this.lisenceFront,
+    this.lisenceBack,
+    this.driverImg,
+    this.additonalImg,
+  });
 }
 
 class PersonalInfo {
@@ -19,6 +33,13 @@ class PersonalInfo {
   String? mobile;
   String? email;
   String? nic;
+
+  PersonalInfo({
+    this.name,
+    this.mobile,
+    this.email,
+    this.nic,
+  });
 }
 
 class VehicleInfo {
@@ -27,11 +48,26 @@ class VehicleInfo {
   XFile? insuranceDoc;
   XFile? vehicleFront;
   XFile? vehicleBack;
+
+  VehicleInfo({
+    this.vehicleBook,
+    this.incomeCertificate,
+    this.insuranceDoc,
+    this.vehicleFront,
+    this.vehicleBack,
+  });
 }
 
-class BankInfo{
+class BankInfo {
   String? bank;
   String? branch;
   String? accountNumber;
   String? accountHolderName;
+
+  BankInfo({
+    this.bank,
+    this.branch,
+    this.accountNumber,
+    this.accountHolderName,
+  });
 }

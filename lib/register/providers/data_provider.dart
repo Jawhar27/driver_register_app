@@ -3,4 +3,5 @@ import 'package:flutter/material.dart';
 
 class DataProvider with ChangeNotifier {
   DriverRegisterRequest? driverRegisterRequest;
+  
 }
