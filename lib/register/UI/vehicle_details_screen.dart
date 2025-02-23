@@ -7,6 +7,7 @@ import 'package:driver_register_app/register/common_widgets/common_register_cont
 import 'package:driver_register_app/register/common_widgets/custom_text_field.dart';
 import 'package:driver_register_app/register/common_widgets/image_container.dart';
 import 'package:driver_register_app/register/common_widgets/main_container.dart';
+import 'package:driver_register_app/register/models/driver_register_request.dart';
 import 'package:driver_register_app/register/providers/data_provider.dart';
 import 'package:driver_register_app/utils/navigation_util.dart';
 import 'package:driver_register_app/utils/screen_util.dart';
@@ -185,12 +186,12 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
         vehicleFront != null) {
       final provider = Provider.of<DataProvider>(context, listen: false);
 
-      provider.driverRegisterRequest?.vehicleInfo?.vehicleFront = vehicleFront;
-      provider.driverRegisterRequest?.vehicleInfo?.vehicleBack = vehicleBack;
-      provider.driverRegisterRequest?.vehicleInfo?.vehicleBook = vehicleBook;
-      provider.driverRegisterRequest?.vehicleInfo?.incomeCertificate =
-          incomeCertificate;
-      provider.driverRegisterRequest?.vehicleInfo?.insuranceDoc = insuranceDoc;
+      provider.addVehicleInfo(VehicleInfo(
+        vehicleFront: vehicleFront,
+        vehicleBack: vehicleBack,
+        vehicleBook: vehicleBook,
+        insuranceDoc: insuranceDoc,
+      ));
 
       pushScreen(
         context,

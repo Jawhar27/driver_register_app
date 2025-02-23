@@ -5,6 +5,7 @@ import 'package:driver_register_app/register/common_widgets/common_register_cont
 import 'package:driver_register_app/register/common_widgets/custom_dropdown_field.dart';
 import 'package:driver_register_app/register/common_widgets/custom_text_field.dart';
 import 'package:driver_register_app/register/common_widgets/main_container.dart';
+import 'package:driver_register_app/register/models/driver_register_request.dart';
 import 'package:driver_register_app/register/providers/data_provider.dart';
 import 'package:driver_register_app/utils/navigation_util.dart';
 import 'package:driver_register_app/utils/screen_util.dart';
@@ -119,12 +120,13 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
     });
     if (_formKey.currentState?.validate() ?? false) {
       final provider = Provider.of<DataProvider>(context, listen: false);
-      provider.driverRegisterRequest?.bankInfo?.bank = selectedBank;
-      provider.driverRegisterRequest?.bankInfo?.accountNumber =
-          _accountNumberController.text;
-      provider.driverRegisterRequest?.bankInfo?.branch = _branchController.text;
-      provider.driverRegisterRequest?.bankInfo?.accountHolderName =
-          _accountHolderNameController.text;
+
+      provider.addBankInfo(BankInfo(
+        bank: selectedBank,
+        accountHolderName: _accountHolderNameController.text,
+        branch: _branchController.text,
+        accountNumber: _accountHolderNameController.text,
+      ));
 
       pushScreen(
         context,

@@ -7,6 +7,7 @@ import 'package:driver_register_app/register/common_widgets/common_register_cont
 import 'package:driver_register_app/register/common_widgets/custom_text_field.dart';
 import 'package:driver_register_app/register/common_widgets/image_container.dart';
 import 'package:driver_register_app/register/common_widgets/main_container.dart';
+import 'package:driver_register_app/register/models/driver_register_request.dart';
 import 'package:driver_register_app/register/providers/data_provider.dart';
 import 'package:driver_register_app/utils/navigation_util.dart';
 import 'package:driver_register_app/utils/print_log.dart';
@@ -68,7 +69,10 @@ class _LisenceDriverVerficationScreenState
 
   @override
   Widget build(BuildContext context) {
-    printLogs(Provider.of<DataProvider>(context,listen: false).driverRegisterRequest?.personalInfo?.email);
+    printLogs(Provider.of<DataProvider>(context, listen: false)
+        .driverRegisterRequest
+        ?.personalInfo
+        ?.email);
     return CommonRegisterContainer(
       progessStep: 2,
       child: Form(
@@ -167,10 +171,13 @@ class _LisenceDriverVerficationScreenState
     );
     if (lisenceFront != null && lisenceFront != null && driverImg != null) {
       final provider = Provider.of<DataProvider>(context, listen: false);
-      provider.driverRegisterRequest?.driverLisenceInfo?.lisenceFront = lisenceFront;
-      provider.driverRegisterRequest?.driverLisenceInfo?.lisenceBack = lisenceBack;
-      provider.driverRegisterRequest?.driverLisenceInfo?.driverImg = driverImg;
-      provider.driverRegisterRequest?.driverLisenceInfo?.additonalImg = additonalImg;
+
+      provider.addLisenceInfo(DriverLisenceInfo(
+        lisenceBack: lisenceBack,
+        lisenceFront: lisenceFront,
+        driverImg: driverImg,
+        additonalImg: additonalImg,
+      ));
     } else {
       setState(() {
         errorMessage = "Image is Required!";

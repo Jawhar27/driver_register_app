@@ -97,12 +97,13 @@ class _DriverProfileScreenState extends State<DriverProfileScreen> {
     });
     if (_formKey.currentState?.validate() ?? false) {
     final provider = Provider.of<DataProvider>(context, listen: false);
-    
-    provider.driverRegisterRequest?.personalInfo?.email = _emailController.text;
-    provider.driverRegisterRequest?.personalInfo?.name = _nameController.text;
-    provider.driverRegisterRequest?.personalInfo?.mobile =
-        _mobileController.text;
-    provider.driverRegisterRequest?.personalInfo?.nic = _nicController.text;
+
+    provider.addPersonalInfo(PersonalInfo(
+      email: _emailController.text,
+      name: _nameController.text,
+      mobile: _mobileController.text,
+      nic: _nicController.text,
+    ));
 
     pushScreen(
       context,
