@@ -191,6 +191,7 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
         vehicleBack: vehicleBack,
         vehicleBook: vehicleBook,
         insuranceDoc: insuranceDoc,
+        incomeCertificate: incomeCertificate,
       ));
 
       pushScreen(

@@ -29,28 +29,28 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
               _divider(),
               _fieldWithValue(
                   title: "Name",
-                  value: provider.driverRegisterRequest?.personalInfo?.name ??
+                  value: provider.driverRegisterRequest.personalInfo?.name ??
                       "Name"),
               _divider(
                 size: 10,
               ),
               _fieldWithValue(
                   title: "Email",
-                  value: provider.driverRegisterRequest?.personalInfo?.email ??
+                  value: provider.driverRegisterRequest.personalInfo?.email ??
                       "Email"),
               _divider(
                 size: 10,
               ),
               _fieldWithValue(
                   title: "Mobile",
-                  value: provider.driverRegisterRequest?.personalInfo?.email ??
+                  value: provider.driverRegisterRequest.personalInfo?.mobile ??
                       "Mobile"),
               _divider(
                 size: 10,
               ),
               _fieldWithValue(
                   title: "NIC",
-                  value: provider.driverRegisterRequest?.personalInfo?.email ??
+                  value: provider.driverRegisterRequest.personalInfo?.nic ??
                       "Nic"),
               _divider(),
               _heading("License Driver Details"),
@@ -64,13 +64,13 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
                     title: "Driver Lisence Front",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.driverLisenceInfo?.lisenceFront,
+                        .driverRegisterRequest.driverLisenceInfo?.lisenceFront,
                   ),
                   imageContainer(
                     title: "Driver Lisence Back",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.driverLisenceInfo?.lisenceBack,
+                        .driverRegisterRequest.driverLisenceInfo?.lisenceBack,
                   ),
                 ],
               ),
@@ -81,13 +81,13 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
                     title: "Driver Image",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.driverLisenceInfo?.driverImg,
+                        .driverRegisterRequest.driverLisenceInfo?.driverImg,
                   ),
                   imageContainer(
                     title: "Additional Document",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.driverLisenceInfo?.additonalImg,
+                        .driverRegisterRequest.driverLisenceInfo?.additonalImg,
                   ),
                 ],
               ),
@@ -103,13 +103,13 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
                     title: "Vehicle Book",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.vehicleInfo?.vehicleBook,
+                        .driverRegisterRequest.vehicleInfo?.vehicleBook,
                   ),
                   imageContainer(
                     title: "Income Certificate",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.vehicleInfo?.incomeCertificate,
+                        .driverRegisterRequest.vehicleInfo?.incomeCertificate,
                   ),
                 ],
               ),
@@ -117,7 +117,7 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
                 title: "Insurance Document",
                 context: context,
                 image:
-                    provider.driverRegisterRequest?.vehicleInfo?.insuranceDoc,
+                    provider.driverRegisterRequest.vehicleInfo?.insuranceDoc,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,13 +126,13 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
                     title: "Vehicle Front",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.vehicleInfo?.vehicleFront,
+                        .driverRegisterRequest.vehicleInfo?.vehicleFront,
                   ),
                   imageContainer(
                     title: "Vehicle Back",
                     context: context,
                     image: provider
-                        .driverRegisterRequest?.vehicleInfo?.vehicleBack,
+                        .driverRegisterRequest.vehicleInfo?.vehicleBack,
                   ),
                 ],
               ),
@@ -144,7 +144,7 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
               _fieldWithValue(
                   title: "Account Holder Name",
                   value: provider
-                          .driverRegisterRequest?.bankInfo?.accountHolderName ??
+                          .driverRegisterRequest.bankInfo?.accountHolderName ??
                       "Account holder"),
               _divider(
                 size: 10,
@@ -152,7 +152,7 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
               _fieldWithValue(
                   title: "Account Number",
                   value:
-                      provider.driverRegisterRequest?.bankInfo?.accountNumber ??
+                      provider.driverRegisterRequest.bankInfo?.accountNumber ??
                           "Account Number"),
               _divider(
                 size: 10,
@@ -160,14 +160,14 @@ class _RegistrationSuccessScreenState extends State<RegistrationSuccessScreen> {
               _fieldWithValue(
                   title: "Bank",
                   value:
-                      provider.driverRegisterRequest?.bankInfo?.bank ?? "Bank"),
+                      provider.driverRegisterRequest.bankInfo?.bank ?? "Bank"),
               _divider(
                 size: 10,
               ),
               _fieldWithValue(
                   title: "Branch",
                   value:
-                      provider.driverRegisterRequest?.bankInfo?.branch ?? "Bank"),
+                      provider.driverRegisterRequest.bankInfo?.branch ?? "Bank"),
               _divider(
                 size: 40,
               ),

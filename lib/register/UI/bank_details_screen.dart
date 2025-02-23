@@ -125,7 +125,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
         bank: selectedBank,
         accountHolderName: _accountHolderNameController.text,
         branch: _branchController.text,
-        accountNumber: _accountHolderNameController.text,
+        accountNumber: _accountNumberController.text,
       ));
 
       pushScreen(
